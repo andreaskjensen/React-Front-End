@@ -9,14 +9,14 @@ export default function ProgressBar({ fillPercent }: { fillPercent: number }) {
   }
 
   return (
-    <div className="w-full h-6 border border-gray-300 rounded bg-white overflow-hidden relative text-sm flex flex-row-reverse">
+    <div className="relative w-full h-4 bg-gray-200  overflow-hidden text-xs font-medium leading-4">
       <div
-        className={`h-full ${fillColor}`}
+        className={`absolute top-0 right-0 bottom-0 ${fillColor}`}
         style={{ width: `${safeFill}%` }}
       ></div>
-      <div className="absolute inset-0 flex items-center justify-center text-black font-medium">
+      <span className="absolute inset-0 flex items-center justify-center mix-blend-difference text-white z-10">
         {safeFill}%
-      </div>
+      </span>
     </div>
   )
 }
